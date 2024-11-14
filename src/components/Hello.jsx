@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { lyrics } from "../constants";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Hello = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const [visible, setVisible] = useState(false); // Initially hide lyrics
+	const [visible, setVisible] = useState(false);
 	const [isFinished, setIsFinished] = useState(false);
-	const [started, setStarted] = useState(false); // New state to track if the lyrics have started
-	const audioRef = useRef(null); // Reference to the audio element
+	const [started, setStarted] = useState(false);
+	const audioRef = useRef(null);
 
 	useEffect(() => {
 		if (currentIndex >= lyrics.length) {
@@ -14,7 +15,7 @@ const Hello = () => {
 			return;
 		}
 
-		if (!started) return; // Prevent lyrics from showing if not started
+		if (!started) return;
 
 		const { text, seconds } = lyrics[currentIndex];
 
@@ -32,20 +33,20 @@ const Hello = () => {
 			clearTimeout(hideTimeout);
 			clearTimeout(showNextTimeout);
 		};
-	}, [currentIndex, started]); // Depend on `started` to trigger effect
+	}, [currentIndex, started]);
 
 	const startLyrics = () => {
-		setStarted(true); // Start the lyrics when button is clicked
-		setIsFinished(false); // Reset finished state
-		setCurrentIndex(0); // Reset to the first lyric
+		setStarted(true);
+		setIsFinished(false);
+		setCurrentIndex(0);
 		if (audioRef.current) {
-			audioRef.current.play(); // Play the audio
+			audioRef.current.play();
 		}
 	};
 
 	const handleAudioEnd = () => {
-		setStarted(false); // Show button again when audio ends
-		setIsFinished(true); // Set finished state to true
+		setStarted(false);
+		setIsFinished(true);
 	};
 
 	return (
@@ -53,15 +54,24 @@ const Hello = () => {
 			{!started && (
 				<button
 					onClick={startLyrics}
-					className="bg-blue-500 text-white py-2 px-4 rounded transition-all ease-in-out duration-300 hover:scale-110">
+					className="fade-in bg-blue-500 text-white py-2 px-4 rounded transition-all ease-in-out duration-300 hover:scale-110">
 					Start!
 				</button>
 			)}
-			{started && visible && (
-				<div className="text-3xl text-center">{lyrics[currentIndex].text}</div>
-			)}
+			<AnimatePresence>
+				{started && visible && (
+					<motion.div
+						key={currentIndex}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 0.5 }}
+						className="text-3xl text-center">
+						{lyrics[currentIndex].text}
+					</motion.div>
+				)}
+			</AnimatePresence>
 
-			{/* Audio element with onEnded event */}
 			<audio
 				ref={audioRef}
 				src="/song/1114.mp3"
