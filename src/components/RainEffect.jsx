@@ -15,7 +15,7 @@ const RainEffect = () => {
       {raindrops.map((drop) => (
         <motion.div
           key={drop.id}
-          className="absolute bg-cyan-400 w-[2px] h-[10px] rounded-lg opacity-90"
+          className="absolute bg-cyan-400 w-[3px] h-[10px] opacity-90 borderRadius"
           style={{
             left: drop.left,
           }}

@@ -1,13 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
-.raindrop {
-    position: absolute;
-    background-color: rgb(27, 161, 205);
-    width: 2px;
-    height: 10px;
-    border-radius: 50%;
-    opacity: 0.5;
+
+.borderRadius {
+    border-radius: 50% 50% 50% 50% / 90% 90% 9% 9%;
+
 }
-  
