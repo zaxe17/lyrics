@@ -51,14 +51,15 @@ const Hello = () => {
 	};
 
 	return (
-		<div className="h-screen flex items-center justify-center text-2xl font-semibold">
+		<div className="h-screen flex flex-col items-center justify-center text-2xl font-semibold">
 			{!started && (
 				<button
 					onClick={startLyrics}
-					className="fade-in bg-blue-500 text-white py-2 px-4 rounded transition-all ease-in-out duration-300 hover:scale-110">
-					Start!
+					className="fade-in bg-blue-500 text-white py-6 px-4 rounded-lg transition-all ease-in-out duration-300 hover:scale-110">
+					(つ╥﹏╥)つ Start! ૮(˶ㅠ︿ㅠ)ა
 				</button>
 			)}
+
 			<AnimatePresence>
 				{started && visible && (
 					<motion.div
@@ -67,15 +68,30 @@ const Hello = () => {
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.5 }}
-						className="text-3xl text-center">
-						{lyrics[currentIndex].text}
+						className="text-center">
+						
+						{lyrics[currentIndex].gif && (
+							<motion.img
+								src={lyrics[currentIndex].gif}
+								alt="lyric gif"
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								exit={{ opacity: 0 }}
+								transition={{ duration: 0.5 }}
+								className="w-1/2 mx-auto mb-4"
+							/>
+						)}
+						
+						<div className="text-3xl text-blue-400">
+							{lyrics[currentIndex].text}
+						</div>
 					</motion.div>
 				)}
 			</AnimatePresence>
 
 			<audio
 				ref={audioRef}
-				src={ music }
+				src={music}
 				onEnded={handleAudioEnd}
 			/>
 		</div>
