@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { lyrics } from "../constants";
 import { motion, AnimatePresence } from "framer-motion";
+import music from "../song/1114.mp3";
 
 const Hello = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -74,7 +75,7 @@ const Hello = () => {
 
 			<audio
 				ref={audioRef}
-				src="/song/1114.mp3"
+				src={ music }
 				onEnded={handleAudioEnd}
 			/>
 		</div>
