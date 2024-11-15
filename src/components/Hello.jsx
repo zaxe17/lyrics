@@ -61,21 +61,21 @@ const Hello = () => {
 					onClick={startLyrics}>
 					
 					<img
-						className="absolute w-2/3 lg:w-full transition-transform duration-300 ease-in-out transform group-hover:-translate-y-10 group-hover:scale-125"
+						className="absolute w-2/3 lg:w-full transition-transform duration-300 ease-in-out transform group-hover:-translate-y-10 group-hover:scale-125 user-drag-none"
 						src={cloud3}
 						alt=""
 					/>
 
 					{/* Left Cloud */}
 					<img
-						className="absolute -left-2 lg:-left-14 w-28 lg:w-60 transition-transform duration-300 ease-in-out transform group-hover:-translate-x-14  lg:group-hover:-translate-x-28 group-hover:scale-125"
+						className="absolute -left-2 lg:-left-14 w-28 lg:w-60 transition-transform duration-300 ease-in-out transform group-hover:-translate-x-14  lg:group-hover:-translate-x-28 group-hover:scale-125 user-drag-none"
 						src={cloud2}
 						alt=""
 					/>
 
 					{/* Right Cloud */}
 					<img
-						className="absolute -right-2 lg:-right-14 w-28 lg:w-60 transition-transform duration-300 ease-in-out transform group-hover:translate-x-14 lg:group-hover:translate-x-28 group-hover:scale-125"
+						className="absolute -right-2 lg:-right-14 w-28 lg:w-60 transition-transform duration-300 ease-in-out transform group-hover:translate-x-14 lg:group-hover:translate-x-28 group-hover:scale-125 user-drag-none"
 						src={cloud1}
 						alt=""
 					/>
@@ -105,7 +105,7 @@ const Hello = () => {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
 								transition={{ duration: 0.5 }}
-								className="w-1/2 mx-auto mb-4"
+								className="w-1/2 mx-auto mb-4 user-drag-none"
 							/>
 						)}
 

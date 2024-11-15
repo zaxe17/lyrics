@@ -5,12 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      translate: {
-        '2.5': '10px', // Custom translation for 10px
-      },
-
-    },
+    extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          '.user-drag-none': {
+            'user-drag': 'none',
+            '-webkit-user-drag': 'none',
+          },
+        },
+        ['responsive', 'hover']
+      );
+    },
+  ],
 }
