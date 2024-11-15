@@ -109,7 +109,7 @@ const Hello = () => {
 							/>
 						)}
 
-						<div className="mx-4 lg:text-3xl text-blue-400">
+						<div className="mx-4 lg:text-3xl text-cyan-200">
 							{lyrics[currentIndex].text}
 						</div>
 					</motion.div>
