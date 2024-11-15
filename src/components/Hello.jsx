@@ -56,10 +56,14 @@ const Hello = () => {
 	return (
 		<div className="h-screen flex flex-col items-center justify-center text-2xl font-semibold">
 			{!started && (
-				<div
+				<motion.div
+					key={currentIndex}
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					transition={{ duration: 2 }}
 					className="relative group flex items-center justify-center"
 					onClick={startLyrics}>
-					
 					<img
 						className="absolute w-2/3 lg:w-full transition-transform duration-300 ease-in-out transform group-hover:-translate-y-10 group-hover:scale-125 user-drag-none"
 						src={cloud3}
@@ -85,7 +89,7 @@ const Hello = () => {
 						style={{ zIndex: 2 }}>
 						(つ╥﹏╥)つ Start! ૮(˶ㅠ︿ㅠ)ა
 					</button>
-				</div>
+				</motion.div>
 			)}
 
 			<AnimatePresence>
