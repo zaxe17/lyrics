@@ -86,7 +86,7 @@ const Hello = () => {
 
 					<button
 						className="relative fade-in bg-cyan-500 text-white text-xl lg:text-2xl lg:py-6 py-4 lg:px-4 px-2 rounded-lg transition-all ease-in-out duration-300 group-hover:scale-110"
-						style={{ zIndex: 2 }}>
+						style={{ zIndex: 1 }}>
 						(つ╥﹏╥)つ Start! ૮(˶ㅠ︿ㅠ)ა
 					</button>
 				</motion.div>
