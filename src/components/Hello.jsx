@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { lyrics } from "../constants";
 import { motion, AnimatePresence } from "framer-motion";
 import music from "../song/1114.mp3";
+import cloud1 from "../image/cloudcry.png";
+import cloud2 from "../image/cloudcry2.png";
+import cloud3 from "../image/cloud-center.png";
 
 const Hello = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,11 +56,36 @@ const Hello = () => {
 	return (
 		<div className="h-screen flex flex-col items-center justify-center text-2xl font-semibold">
 			{!started && (
-				<button
-					onClick={startLyrics}
-					className="fade-in bg-blue-500 text-white py-6 px-4 rounded-lg transition-all ease-in-out duration-300 hover:scale-110">
-					(つ╥﹏╥)つ Start! ૮(˶ㅠ︿ㅠ)ა
-				</button>
+				<div
+					className="relative group flex items-center justify-center"
+					onClick={startLyrics}>
+					
+					<img
+						className="absolute w-2/3 lg:w-full transition-transform duration-300 ease-in-out transform group-hover:-translate-y-10 group-hover:scale-125"
+						src={cloud3}
+						alt=""
+					/>
+
+					{/* Left Cloud */}
+					<img
+						className="absolute -left-2 lg:-left-14 w-28 lg:w-60 transition-transform duration-300 ease-in-out transform group-hover:-translate-x-14  lg:group-hover:-translate-x-28 group-hover:scale-125"
+						src={cloud2}
+						alt=""
+					/>
+
+					{/* Right Cloud */}
+					<img
+						className="absolute -right-2 lg:-right-14 w-28 lg:w-60 transition-transform duration-300 ease-in-out transform group-hover:translate-x-14 lg:group-hover:translate-x-28 group-hover:scale-125"
+						src={cloud1}
+						alt=""
+					/>
+
+					<button
+						className="relative fade-in bg-cyan-500 text-white text-xl lg:text-2xl lg:py-6 py-4 lg:px-4 px-2 rounded-lg transition-all ease-in-out duration-300 group-hover:scale-110"
+						style={{ zIndex: 2 }}>
+						(つ╥﹏╥)つ Start! ૮(˶ㅠ︿ㅠ)ა
+					</button>
+				</div>
 			)}
 
 			<AnimatePresence>
@@ -69,7 +97,6 @@ const Hello = () => {
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.5 }}
 						className="text-center">
-						
 						{lyrics[currentIndex].gif && (
 							<motion.img
 								src={lyrics[currentIndex].gif}
@@ -81,19 +108,15 @@ const Hello = () => {
 								className="w-1/2 mx-auto mb-4"
 							/>
 						)}
-						
-						<div className="text-3xl text-blue-400">
+
+						<div className="mx-4 lg:text-3xl text-blue-400">
 							{lyrics[currentIndex].text}
 						</div>
 					</motion.div>
 				)}
 			</AnimatePresence>
 
-			<audio
-				ref={audioRef}
-				src={music}
-				onEnded={handleAudioEnd}
-			/>
+			<audio ref={audioRef} src={music} onEnded={handleAudioEnd} />
 		</div>
 	);
 };

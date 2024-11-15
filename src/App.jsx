@@ -3,7 +3,7 @@ import RainEffect from './components/RainEffect'
 
 const App = () => {
   return (
-		<div className='bg-slate-300'>
+		<div className='bg-sky-900'>
 			<RainEffect />
 			<Hello />
 		</div>
