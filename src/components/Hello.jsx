@@ -62,24 +62,26 @@ const Hello = () => {
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
 					transition={{ duration: 2 }}
-					className="relative group flex items-center justify-center"
+					className="relative group flex items-center justify-center drop-shadow-shadow-color"
 					onClick={startLyrics}>
+
+					{/* Center cloud */}
 					<img
-						className="absolute w-2/3 lg:w-full transition-all duration-500 ease-in-out transform group-hover:-translate-y-10 scale-75 group-hover:scale-125 opacity-0 group-hover:opacity-100 user-drag-none"
+						className="absolute w-2/3 lg:w-full transition-all duration-500 ease-in-out transform group-hover:-translate-y-10 scale-75 group-hover:scale-125 opacity-0 group-hover:opacity-100 user-drag-none pointer-events-none"
 						src={cloud3}
 						alt=""
 					/>
 
 					{/* Left Cloud */}
 					<img
-						className="absolute -left-2 lg:-left-10 w-28 lg:w-60 transition-all duration-500 ease-in-out transform group-hover:-translate-x-14  lg:group-hover:-translate-x-28 scale-75 group-hover:scale-125 opacity-0 group-hover:opacity-100 user-drag-none"
+						className="absolute -left-2 lg:-left-10 w-28 lg:w-60 transition-all duration-500 ease-in-out transform group-hover:-translate-x-14  lg:group-hover:-translate-x-28 scale-75 group-hover:scale-125 opacity-0 group-hover:opacity-100 user-drag-none pointer-events-none"
 						src={cloud2}
 						alt=""
 					/>
 
 					{/* Right Cloud */}
 					<img
-						className="absolute -right-2 lg:-right-10 w-28 lg:w-60 transition-all duration-500 ease-in-out transform group-hover:translate-x-14 lg:group-hover:translate-x-28 scale-75 group-hover:scale-125 opacity-0 group-hover:opacity-100 user-drag-none"
+						className="absolute -right-2 lg:-right-10 w-28 lg:w-60 transition-all duration-500 ease-in-out transform group-hover:translate-x-14 lg:group-hover:translate-x-28 scale-75 group-hover:scale-125 opacity-0 group-hover:opacity-100 user-drag-none pointer-events-none"
 						src={cloud1}
 						alt=""
 					/>
