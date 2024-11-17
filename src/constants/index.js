@@ -8,38 +8,38 @@ import gif7 from "../image/cry.gif"
 
 export const lyrics = [
     {
-        text: "Iniisip ko kung bakit ganito ang langit",
-        seconds: 3,
+        text: "At sa bawat minuto",
+        seconds: 3.2,
         gif: gif1,
     },
     {
-        text: "Nilayo ako sayo",
-        seconds: 2.5,
+        text: "Ako'y 'di natuto",
+        seconds: 3.3,
         gif: gif2,
     },
     {
-        text: "Hindi ko matanggap mahirap magpanggap",
-        seconds: 3,
+        text: "Ipilit mang iba",
+        seconds: 2.3,
         gif: gif3,
     },
     {
-        text: "Na ako'y hindi bigo",
-        seconds: 3,
+        text: "Ako'y maghihintay sa 'yo",
+        seconds: 2.5,
         gif: gif4,
     },
     {
-        text: "Ngunit 'di ko rin inaasahang mangyayari 'to",
-        seconds: 6,
+        text: "Ikaw ang aking kapiling",
+        seconds: 3.5,
         gif: gif5,
     },
     {
-        text: "Kung ikaw ay alaala na lang",
-        seconds: 4,
+        text: "Sa huling sandali",
+        seconds: 3,
         gif: gif6,
     },
     {
-        text: "Paano na ako",
-        seconds: 3,
+        text: "Kasalanan ba kung puso natin ang magwawagi?",
+        seconds: 5.8,
         gif: gif7,
     },
 ]

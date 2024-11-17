@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { lyrics } from "../constants";
 import { motion, AnimatePresence } from "framer-motion";
-import music from "../song/1114.mp3";
+import music from "../song/huling_sandali.mp3";
 import cloud1 from "../image/cloudcry.png";
 import cloud2 from "../image/cloudcry2.png";
 import cloud3 from "../image/cloud-center.png";
@@ -64,7 +64,6 @@ const Hello = () => {
 					transition={{ duration: 2 }}
 					className="relative group flex items-center justify-center drop-shadow-shadow-color"
 					onClick={startLyrics}>
-
 					{/* Center cloud */}
 					<img
 						className="absolute w-2/3 lg:w-full transition-all duration-500 ease-in-out transform group-hover:-translate-y-10 scale-75 group-hover:scale-125 opacity-0 group-hover:opacity-100 user-drag-none pointer-events-none"
